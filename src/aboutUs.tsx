@@ -86,7 +86,7 @@ function About() {
                     <div className="flex flex-col gap-32 lg:flex-row">
                         <div className="flex justify-between mt-16 lg:flex-col lg:gap-8 2xl:gap-16 lg:justify-start">
                             <div className="flex flex-col gap-[100px]">
-                                {list.map((item, index) => {
+                                {list.map((item) => {
                                     return <div
                                     >
 
