@@ -1,7 +1,6 @@
 import './App.css'
 
 import About from './aboutUs'
-import { Subscribe } from './components/Subscribe'
 
 function App() {
 
