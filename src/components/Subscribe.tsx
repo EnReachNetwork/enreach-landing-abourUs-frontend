@@ -28,7 +28,7 @@ export function Subscribe() {
             }),
         })
             .then(response => response.json())
-            .then(data => {
+            .then(() => {
                 toast.success('Submit subscription successfully！');
                 setInputEmail('')
 
