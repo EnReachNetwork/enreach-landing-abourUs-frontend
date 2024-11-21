@@ -1,6 +1,7 @@
 import './App.css'
 
 import About from './aboutUs'
+import { Subscribe } from './components/Subscribe'
 
 function App() {
 
@@ -8,9 +9,10 @@ function App() {
   return (
     <div className='w-screen'>
 
-      <main className='container'>
+      <div className='w-screen'>
         <About />
-      </main>
+      </div>
+
     </div>
   )
 }

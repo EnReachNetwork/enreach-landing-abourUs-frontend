@@ -3,6 +3,7 @@ import { useScroll, useTransform } from "motion/react";
 import clsx from "clsx";
 import { methods } from "./config/about";
 import useMobileDetect from "./hooks/useMobileDetect";
+import { Subscribe } from "./components/Subscribe";
 
 const list = [
     { title: 'WHY WE EXIST', subTitle: 'Pioneering the Edge Cloud for the AI Era', text: 'EnReach bridges the gap between centralized cloud systems and the needs of next-generation applications. As AI reshapes industries, we bring the cloud closer to users, enabling instant responses, seamless interactions, and scalable performance. By creating an globally-connected edge cloud, we empower the AI-driven world with infrastructure designed for speed, flexibility, and accessibility.' },
@@ -112,18 +113,22 @@ function About() {
             </>
 
         }
-        <div className="grid grid-cols-1 gap-16 sm:gap-[27px]  mt-[-250px] lg:grid-cols-2">
-            {methods.map((method, index) => (
-                <div key={index} className="p-8 about-method sm:p-4">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full">
-                        <method.icon />
-                    </div>
+        <div className="container">
+            <div className="grid grid-cols-1 gap-16 sm:gap-[27px]  mt-[-250px] lg:grid-cols-2">
+                {methods.map((method, index) => (
+                    <div key={index} className="p-8 about-method sm:p-4">
+                        <div className="flex items-center justify-center w-16 h-16 rounded-full">
+                            <method.icon />
+                        </div>
 
-                    <div className="mt-8 text-xl about-method-title">{method.title}</div>
-                    <div className="mt-4 text-base text-[#F3F3F380] about-method-content">{method.content}</div>
-                </div>
-            ))}
+                        <div className="mt-8 text-xl about-method-title">{method.title}</div>
+                        <div className="mt-4 text-base text-[#F3F3F380] about-method-content">{method.content}</div>
+                    </div>
+                ))}
+            </div>
         </div>
+        <Subscribe />
+
     </div>
 }
 
