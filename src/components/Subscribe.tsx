@@ -30,7 +30,8 @@ export function Subscribe() {
             .then(response => response.json())
             .then(data => {
                 toast.success('Submit subscription successfully！');
-                console.log('Success:', data);
+                setInputEmail('')
+
             })
             .catch(error => {
                 console.error('Error:', error);
