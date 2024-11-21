@@ -40,10 +40,10 @@ function About() {
         })
     }, [])
 
-    return <div className="container pt-40">
+    return <div className="pt-40 ">
 
         {!isMobile ?
-            <div ref={ref} className="container relative block sm:hidden lg:pb-72 h-[5000px]  " >
+            <div ref={ref} className="container md:!px-0 relative block sm:hidden lg:pb-72 h-[4000px] w-full " >
                 <section className="sticky flex flex-col h-screen top-24 2xl:top-30 bg-[url(./earth.png)]  bg-no-repeat bg-right-top  ">
 
                     <div className="flex flex-col gap-32 lg:flex-row">
@@ -112,14 +112,15 @@ function About() {
             </>
 
         }
-        <div className="grid grid-cols-1 gap-16 mt-16 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-16 sm:gap-[27px]  mt-[-250px] lg:grid-cols-2">
             {methods.map((method, index) => (
-                <div key={index} className="p-8 border about-method border-white/10 bg-black/20 rounded-3xl">
-                    <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+                <div key={index} className="p-8 about-method sm:p-4">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full">
                         <method.icon />
                     </div>
-                    <div className="mt-8 text-3xl about-method-title">{method.title}</div>
-                    <div className="mt-4 text-2xl about-method-content">{method.content}</div>
+
+                    <div className="mt-8 text-xl about-method-title">{method.title}</div>
+                    <div className="mt-4 text-base text-[#F3F3F380] about-method-content">{method.content}</div>
                 </div>
             ))}
         </div>
