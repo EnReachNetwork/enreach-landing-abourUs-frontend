@@ -5,9 +5,11 @@ export function Footer() {
     const currentYear = new Date().getFullYear()
     return (
         <footer className="bg-black/20 border border-white/30 text-white bottom-0  relative container p-8 sm:p-[30px] rounded-[40px] mt-16">
-            <div className="flex flex-col items-center justify-between lg:items-center lg:flex-row ">
+            <div className="flex flex-col items-center justify-between lg:items-center lg:flex-row">
                 <Logo />
-                <SocialButtons />
+                <div className="mo:mt-8">
+                    <SocialButtons />
+                </div>
 
             </div>
             <div className="  mt-[50px]">
