@@ -77,7 +77,7 @@ function About() {
                 </div>
             </section>
         </div>
-        <div className="ssm:hidden">
+        <div className="ng:hidden">
             <img src="./mo-earth.png " className="relative z-auto w-full" />
             <div ref={ref} className="container hidden sm:block" >
                 <div className="flex flex-col gap-32 lg:flex-row">
