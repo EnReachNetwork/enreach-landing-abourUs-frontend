@@ -9,7 +9,6 @@ const sections = [
     { label: 'Home', href: 'https://enreach.network/' },
     { label: 'About Us', href: '/' },
     { label: 'Docs', href: 'https://docs.enreach.network' },
-    { label: 'Sign In', href: '' },
 
 ]
 

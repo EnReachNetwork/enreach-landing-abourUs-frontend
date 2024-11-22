@@ -113,7 +113,7 @@ function About() {
             </>
 
         }
-        <div className="container">
+        <div className="container md:!px-0 mt-20">
             <div className="grid grid-cols-1 gap-16 sm:gap-[27px]  mt-[-250px] lg:grid-cols-2">
                 {methods.map((method, index) => (
                     <div key={index} className="p-8 about-method sm:p-4">
