@@ -9,7 +9,7 @@ const useMobileDetect = () => {
     document.body.clientWidth;
 
   const handleResize = () => {
-    setIsMobile(getWindowWidth() <= 640);
+    setIsMobile(getWindowWidth() <= 900);
   };
 
   useEffect(() => {

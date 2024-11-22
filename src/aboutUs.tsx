@@ -43,80 +43,75 @@ function About() {
 
     return <div className="pt-40 ">
 
-        {!isMobile ?
-            <div ref={ref} className="container md:!px-0 relative block sm:hidden lg:pb-72 h-[4000px] w-full " >
-                <section className="sticky flex flex-col h-screen top-24 2xl:top-30 bg-[url(./earth.png)]  bg-no-repeat bg-right-top  ">
+        <div ref={ref} className=" mo:hidden container md:!px-0 relative block sm:hidden lg:pb-72 h-[4000px] w-full " >
+            <section className="sticky flex flex-col h-screen top-24 2xl:top-30 bg-[url(./earth.png)]  bg-no-repeat bg-right-top  ">
+                <div className="flex flex-col gap-32 lg:flex-row">
+                    <div className="flex justify-between mt-16 lg:flex-col lg:gap-8 2xl:gap-16 lg:justify-start">
+                        <div className="flex flex-col">
+                            {list.map((item, index) => {
+                                return <div style={{
+                                    opacity: currentIndex === index ? 1 : 0.5,
+                                    transition: 'all 1s ease-in-out',
+                                }}
+                                    className={clsx("architecture__item p-4", currentIndex === index ? ' max-w-[750px] ' : 'border-transparent max-w-[750px]')} key={index}
 
-                    <div className="flex flex-col gap-32 lg:flex-row">
-                        <div className="flex justify-between mt-16 lg:flex-col lg:gap-8 2xl:gap-16 lg:justify-start">
-                            <div className="flex flex-col">
-                                {list.map((item, index) => {
-                                    return <div style={{
-                                        opacity: currentIndex === index ? 1 : 0.5,
-                                        transition: 'all 1s ease-in-out',
-                                    }}
-                                        className={clsx("architecture__item p-4", currentIndex === index ? ' max-w-[750px] ' : 'border-transparent max-w-[750px]')} key={index}
+                                >
 
-                                    >
+                                    <div className="flex flex-col">
+                                        <div>
+                                            <div className="about-title">{item.title}</div>
+                                            <div className="about-subtitle">{item.subTitle}</div>
 
-                                        <div className="flex flex-col">
-                                            <div>
-                                                <div className="about-title">{item.title}</div>
-                                                <div className="about-subtitle">{item.subTitle}</div>
+                                            <p className="text-base leading-relaxed about-content">
+                                                {item.text}
 
-                                                <p className="text-base leading-relaxed about-content">
-                                                    {item.text}
+                                            </p>
 
-                                                </p>
-
-                                            </div>
                                         </div>
                                     </div>
-                                })}
-                            </div>
+                                </div>
+                            })}
                         </div>
-
                     </div>
-                </section>
-            </div>
-            :
-            <>
-                <img src="./mo-earth.png " className="hidden sm:block" />
 
-                <div ref={ref} className="container hidden sm:block" >
-                    <div className="flex flex-col gap-32 lg:flex-row">
-                        <div className="flex justify-between mt-16 lg:flex-col lg:gap-8 2xl:gap-16 lg:justify-start">
-                            <div className="flex flex-col gap-[100px]">
-                                {list.map((item) => {
-                                    return <div
-                                    >
-
-                                        <div className="flex flex-col">
-                                            <div>
-                                                <div className="leading-10 about-title">{item.title}</div>
-                                                <div className="about-subtitle">{item.subTitle}</div>
-
-                                                <p className="text-base leading-relaxed about-content">
-                                                    {item.text}
-
-                                                </p>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                })}
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
-            </>
+            </section>
+        </div>
+        <div className="ssm:hidden">
+            <img src="./mo-earth.png " className="relative z-auto w-full" />
+            <div ref={ref} className="container hidden sm:block" >
+                <div className="flex flex-col gap-32 lg:flex-row">
+                    <div className="flex justify-between mt-16 lg:flex-col lg:gap-8 2xl:gap-16 lg:justify-start">
+                        <div className="flex flex-col gap-[100px]">
+                            {list.map((item) => {
+                                return <div
+                                >
 
-        }
-        <div className="container md:!px-0 mt-20">
+                                    <div className="flex flex-col">
+                                        <div>
+                                            <div className="leading-10 about-title">{item.title}</div>
+                                            <div className="about-subtitle">{item.subTitle}</div>
+
+                                            <p className="text-base leading-relaxed about-content">
+                                                {item.text}
+
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            })}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div className="container md:!px-0 mt-20  mo:mt-80 mo:mb-10">
             <div className="grid grid-cols-1 gap-16 sm:gap-[27px]  mt-[-250px] lg:grid-cols-2">
                 {methods.map((method, index) => (
-                    <div key={index} className="p-8 about-method sm:p-4">
+                    <div key={index} className="p-8 about-method sm:p-0">
                         <div className="flex items-center justify-center w-16 h-16 rounded-full">
                             <method.icon />
                         </div>
