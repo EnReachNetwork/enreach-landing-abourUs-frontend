@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform } from "motion/react";
 import clsx from "clsx";
 import { methods } from "./config/about";
-import useMobileDetect from "./hooks/useMobileDetect";
 import { Subscribe } from "./components/Subscribe";
 
 const list = [
@@ -17,7 +16,6 @@ function About() {
     const ref = useRef<HTMLDivElement>(null);
     const [scrollRange, setScrollRange] = useState([0, 0]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const isMobile = useMobileDetect()
 
     useEffect(() => {
         if (ref.current) {
